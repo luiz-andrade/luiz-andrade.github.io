@@ -9,6 +9,15 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
+    
+    const now = new Date();
+    const past = new Date('2021-04-15');
+    const diff = Math.abs(now.getTime() - past.getTime());
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    const years = Math.ceil(diff / (1000 * 60 * 60* 24 * 365));
+
+    var span = document.getElementById("tempo-nbs");
+    span.textContent = '2021 Presente('+years+' anos, '+  days+' dias)'
 
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
