@@ -15,9 +15,18 @@ window.addEventListener('DOMContentLoaded', event => {
     const diff = Math.abs(now.getTime() - past.getTime());
     const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
     const years = Math.ceil(diff / (1000 * 60 * 60* 24 * 365));
+    const minuts = Math.ceil(diff / (1000));
 
-    var span = document.getElementById("tempo-nbs");
-    span.textContent = '2021 Presente('+years+' anos, '+  days+' dias)'
+    var tempo_nbs = document.getElementById("tempo-nbs");
+    tempo_nbs.textContent = '2021 Presente('+years+' anos, '+  days+' dias)'
+    
+    function relogio() {
+        var horaatual = document.getElementById("hora-atual");
+        const hora = new Date()
+        horaatual.textContent = hora.toLocaleString()
+      }
+
+      setInterval(relogio, 1000);
 
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
